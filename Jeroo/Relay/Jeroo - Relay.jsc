@@ -1,0 +1,81 @@
+@PYTHON
+def nav(self):
+  if isClear(AHEAD):
+    hop()
+  elif isNet(AHEAD):
+    toss()
+    nav()
+  elif isFlower(AHEAD):
+  	hop()
+  elif isClear(RIGHT):
+    turn(RIGHT)
+    hop()
+  elif isNet(RIGHT):
+    turn(RIGHT)
+    toss()
+    nav()
+  elif isFlower(RIGHT):
+    turn(RIGHT)
+    hop()
+  elif isClear(LEFT):
+    turn(LEFT)
+    hop()
+  elif isNet(LEFT):
+    turn(LEFT)
+    toss()
+    nav()
+  elif isFlower(LEFT):
+    turn(LEFT)
+    hop()
+    
+def bobRun(self):
+  while not isJeroo(AHEAD):
+    nav()
+    pick()
+  while hasFlower():
+    give()
+   
+   
+#************
+def timRun(self):
+  while not isJeroo(AHEAD):
+    nav()
+    pick()
+  while hasFlower():
+    give()
+#***********
+def sueRun(self):
+  while not isJeroo(AHEAD):
+    nav()
+    pick()
+  while hasFlower():
+    give()
+   
+   
+   
+#*************
+def eveRun(self):
+  while not isWater(AHEAD):
+    nav()
+    pick()
+  while hasFlower():
+    give()
+   
+   
+   
+#*************
+@@
+#NAME
+
+bob = Jeroo(1)
+tim = Jeroo(0,23,SOUTH)
+sue = Jeroo(12,0,SOUTH)
+eve = Jeroo(22,23,WEST)
+   
+bob.bobRun()
+tim.timRun()
+sue.sueRun()
+eve.eveRun()
+
+#DO NOT EDIT THE CODE ABOVE THIS LINE!
+#*******************************************

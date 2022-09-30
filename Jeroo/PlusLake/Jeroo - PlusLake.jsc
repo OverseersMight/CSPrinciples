@@ -1,0 +1,37 @@
+@PYTHON
+def nav(self):
+  if isClear(LEFT):
+    turn(LEFT)
+    hop()
+  elif isNet(LEFT):
+    turn(LEFT)
+    toss()
+  elif isFlower(LEFT):
+    turn(LEFT)
+    hop()
+  elif isClear(AHEAD):
+    hop()
+  elif isNet(AHEAD):
+    toss()
+  elif isFlower(AHEAD):
+    hop()
+  elif isClear(RIGHT):
+    turn(RIGHT)
+    hop()
+  elif isNet(RIGHT):
+    turn(RIGHT)
+    toss()
+  elif isFlower(RIGHT):
+    turn(RIGHT)
+    hop()
+@@
+j=Jeroo(10,10,WEST,8)
+while j.hasFlower():
+  if not j.isWater(RIGHT) and not j.isWater(LEFT):
+    j.nav()
+    j.plant()
+    j.nav()
+    j.plant()
+    j.nav()
+    j.nav()
+  j.nav()

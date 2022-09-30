@@ -1,0 +1,42 @@
+@PYTHON
+def nav(self):
+  if isClear(AHEAD):
+    hop()
+  elif isNet(AHEAD):
+    toss()
+  elif isFlower(AHEAD):
+    hop()
+  elif isClear(LEFT):
+    turn(LEFT)
+    hop()
+  elif isNet(LEFT):
+    turn(LEFT)
+    toss()
+  elif isFlower(LEFT):
+    turn(LEFT)
+    hop()
+  elif isClear(RIGHT):
+    turn(RIGHT)
+    hop()
+  elif isNet(RIGHT):
+    turn(RIGHT)
+    toss()
+  elif isFlower(RIGHT):
+    turn(RIGHT)
+    hop()
+
+@@
+bob=Jeroo(0,0,EAST,46)
+man=Jeroo(0,23,WEST,46)
+while not bob.isJeroo(AHEAD):
+  bob.plant()
+  bob.nav()
+  man.plant()
+  man.nav()
+bob.turn(RIGHT)
+man.turn(LEFT)
+while not bob.isFacing(NORTH):
+  bob.plant()
+  bob.nav()
+  man.plant()
+  man.nav()

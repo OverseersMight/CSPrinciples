@@ -1,0 +1,84 @@
+@PYTHON
+def nav(self):
+  if isClear(AHEAD):
+    hop()
+  elif isNet(AHEAD):
+    toss()
+    nav()
+  elif isFlower(AHEAD):
+  	hop()
+  elif isClear(RIGHT):
+    turn(RIGHT)
+    hop()
+  elif isNet(RIGHT):
+    turn(RIGHT)
+    toss()
+    nav()
+  elif isFlower(RIGHT):
+    turn(RIGHT)
+    hop()
+  elif isClear(LEFT):
+    turn(LEFT)
+    hop()
+  elif isNet(LEFT):
+    turn(LEFT)
+    toss()
+    nav()
+  elif isFlower(LEFT):
+    turn(LEFT)
+    hop()
+def circle(self):
+  while not isFacing(EAST):
+    turn(RIGHT)
+  while not isFlower(AHEAD):
+    plant()
+    nav()
+    if not isWater(RIGHT):
+      turn(RIGHT)
+  plant()
+@@
+bob=Jeroo(1,1,EAST,144)
+bob.circle()
+bob.turn(RIGHT)
+bob.turn(RIGHT)
+bob.hop(6)
+bob.turn(LEFT)
+
+bob.circle()
+bob.turn(RIGHT)
+bob.turn(RIGHT)
+bob.hop(6)
+
+bob.circle()
+bob.hop()
+bob.turn(RIGHT)
+bob.hop(5)
+
+bob.circle()
+bob.hop()
+bob.turn(RIGHT)
+bob.hop(5)
+
+bob.circle()
+bob.hop()
+bob.turn(RIGHT)
+bob.hop(5)
+
+bob.circle()
+bob.hop(4)
+bob.turn(LEFT)
+bob.hop()
+bob.turn(RIGHT)
+bob.hop(4)
+
+bob.circle()
+bob.hop(4)
+bob.turn(LEFT)
+bob.hop(8)
+
+bob.circle()
+bob.hop(5)
+bob.turn(RIGHT)
+bob.hop(6)
+
+bob.circle()

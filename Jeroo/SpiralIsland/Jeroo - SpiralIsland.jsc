@@ -1,0 +1,33 @@
+@PYTHON
+def nav(self):
+  if not isClear(AHEAD) and isNet(AHEAD):
+    toss()
+  elif not isClear(AHEAD) and not isFlower(AHEAD):
+    if isClear(RIGHT):
+      turn(RIGHT)
+      nav()
+    elif isClear(LEFT):
+      turn(LEFT)
+      nav()
+    else:
+      turn(RIGHT)
+      turn(RIGHT)
+      if isClear(AHEAD):
+        nav()
+  else:
+    hop()
+@@
+bob1=Jeroo(10,11,WEST,0)
+
+while not bob1.isFlower(HERE):
+  bob1.nav()
+bob1.pick()
+
+bob2=Jeroo(14, 14)
+  
+while not bob1.isJeroo(AHEAD):
+  bob1.nav()
+bob1.turn(RIGHT)
+
+while not bob1.isWater(AHEAD):
+  bob1.nav()

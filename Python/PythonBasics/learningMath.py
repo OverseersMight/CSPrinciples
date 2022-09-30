@@ -1,0 +1,11 @@
+print()
+num=132
+print(num)
+num=143
+print(num)
+num+=4314
+print(num)
+num-=3214
+print(num)
+num/=100
+print(num)

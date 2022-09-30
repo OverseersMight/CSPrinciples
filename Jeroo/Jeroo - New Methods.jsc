@@ -1,0 +1,39 @@
+@PYTHON
+def turnAround(self):
+  self.turn(RIGHT)
+  self.turn(RIGHT)
+  
+def pickHop(self):
+  self.pick()
+  self.hop()
+  
+def plantHop(self):
+  self.plant()
+  self.hop()
+  
+def runForward(self):
+  while isClear(AHEAD):
+    self.hop()
+    
+def runLap(self):
+  self.runForward()
+  self.turn(RIGHT)
+  self.runForward()
+  self.turn(RIGHT)
+  self.runForward()
+  self.turn(RIGHT)
+  self.runForward()
+  self.turn(RIGHT)
+  
+def hop2(self):
+  self.hop()
+  self.hop()
+@@
+bob1=Jeroo(0,0,EAST,100)
+bob2=Jeroo(0,23,SOUTH,100)
+bob3=Jeroo(23,23,WEST,100)
+bob4=Jeroo(23,0,NORTH,100)
+bob1.runLap()
+bob2.runLap()
+bob3.runLap()
+bob4.runLap()
