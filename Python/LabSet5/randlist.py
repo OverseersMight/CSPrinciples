@@ -12,11 +12,19 @@ def toInt(to_convert):
         return False
 
 
-def randlist(size):
+def random_list(size):
     lis = []
+    possible = []
+    for i in range(1, (size) + 1):
+        possible.append(i)
+    print("Done building list...")
     while size > 0:
-        lis.append(random.randint(0, 10))
-        size = size - 1
-        if size % 100000 == 0:
-            print("Current size is %s" % len(lis))
+        print(size)
+        rand = random.randint(0, len(possible)) - 1
+        lis.append(possible[rand]*3)
+        possible.pop(rand)
+        size -= 1
     return lis
+
+
+print(random_list(100000))
